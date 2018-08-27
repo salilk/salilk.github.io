@@ -1,0 +1,60 @@
+<head>
+    <script data-cfasync="false">
+        (function(t,c,E,m,b,i){E[t]=E[t]||{};b=m.getElementsByTagName(c)[0];m=m.createElement(c);
+            E[t].i=E[t].i || i;m.async=1;m.src=("file:"==location.protocol?"https:":"https:")+"//qa.techcrumb.com/tc-init.js";
+            b.parentNode.insertBefore(m,b)})("tcEmbed","script",window,document,"api", "2c9f9ad35be2b41c015bfbfbfc462b01");
+    </script>
+</head>
+<!--<head>
+    <script data-cfasync="false">
+        (function(t,c,E,m,b,i){E[t]=E[t]||{};b=m.getElementsByTagName(c)[0];m=m.createElement(c);
+            E[t].i=E[t].i || i;m.async=1;m.src="//localhost:8080/tc-init.js";
+            b.parentNode.insertBefore(m,b)})("tcEmbed","script",window,document,"api", "4028818760bcbd5e0160bd3143e20000");
+    </script>
+</head>-->
+<div>
+    <div id="player"></div>
+</div>
+
+<script>
+    // 2. This code loads the IFrame Player API code asynchronously.
+    var tag = document.createElement('script');
+
+    tag.src = "https://www.youtube.com/iframe_api";
+    var firstScriptTag = document.getElementsByTagName('script')[0];
+    firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+    // 3. This function creates an <iframe> (and YouTube player)
+    //    after the API code downloads.
+    var player;
+    function onYouTubeIframeAPIReady() {
+        player = new YT.Player('player', {
+            height: '390',
+            width: '640',
+            videoId: 'pAvlQj2ENgo',//'wGyUP4AlZ6I',
+            events: {
+                'onReady': onPlayerReady
+            },
+            playerVars: {
+                autoplay: 0,
+                controls: 1,
+                disablekb: 1,
+                loop: 0,
+                modestbranding: 1,
+                playsinline: 1,
+                showinfo: 0,
+                start: 0,
+                iv_load_policy: 3,
+                forcenewui: 1,
+                fs: 0,
+                rel: 0
+            }
+        });
+    }
+
+    // 4. The API will call this function when the video player is ready.
+    function onPlayerReady(event) {
+        player.setPlaybackRate(1);
+        event.target.playVideo();
+    }
+</script>
